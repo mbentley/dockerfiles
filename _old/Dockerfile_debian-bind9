@@ -1,0 +1,26 @@
+# Debian bind9
+#
+# VERSION       0.1
+
+# use the debian base image provided by dotCloud
+FROM debian
+
+MAINTAINER Matt Bentley mbentley@mbentley.net
+
+# make sure the package repository is up to date
+RUN apt-get update
+
+# install nano
+RUN apt-get install -y nano
+
+# install bind9
+RUN apt-get install -y bind9
+
+# Launch bind when launching the container
+#ENTRYPOINT ["bind"]
+
+# run bind as the daemon user
+#USER daemon
+
+# expose bind port
+EXPOSE 53

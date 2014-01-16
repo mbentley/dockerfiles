@@ -1,4 +1,4 @@
-docker-debian_base
+debian/base
 ==================
 
-Base docker image for Debian
+Base docker image for Debian Wheezy

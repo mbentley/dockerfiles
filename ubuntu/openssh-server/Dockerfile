@@ -3,10 +3,10 @@ MAINTAINER Matt Bentley <mbentley@mbentley.net>
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
-RUN apt-get install -y nginx supervisor
+RUN apt-get install -y openssh-server supervisor
 
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+RUN mkdir -p /var/run/sshd
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-EXPOSE 80
+EXPOSE 22
 CMD ["/usr/bin/supervisord"]

@@ -8,4 +8,4 @@ RUN apt-get install -y nginx supervisor
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD run.sh /usr/local/bin/run
 
-cmd ["/usr/local/bin/run"]
+CMD ["/usr/local/bin/run"]

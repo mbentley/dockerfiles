@@ -5,7 +5,10 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 RUN apt-get install -y openssh-server supervisor
 
-RUN mkdir -p /var/run/sshd
+ADD authorized_keys /authorized_keys
+ADD configure.sh /configure.sh
+RUN bin/bash /configure.sh && rm /configure.sh
+
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 22

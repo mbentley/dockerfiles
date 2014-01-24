@@ -4,6 +4,9 @@ mbentley/ubuntu-bind9
 docker image for bind9
 based off of mbentley/ubuntu-base
 
+To pull this image:
+`docker pull mbentley/ubuntu-bind9`
+
 Example usage, binding to an IP on the docker host:
 `docker run -p <ip-address>:53:53 -p <ip-address>:53:53/udp -d mbentley/ubuntu-bind9`
 

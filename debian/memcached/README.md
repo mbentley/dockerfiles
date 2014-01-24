@@ -2,7 +2,7 @@ mbentley/debian-memcached
 ==================
 
 docker image for memcached
-Based off of mbentley/debian-base
+Based off of debian
 
 To pull this image:
 `docker pull mbentley/debian-memcached`

@@ -2,7 +2,7 @@ mbentley/ubuntu-bind9
 ==================
 
 docker image for bind9
-based off of mbentley/ubuntu-base
+based off of ubuntu:12.04
 
 To pull this image:
 `docker pull mbentley/ubuntu-bind9`

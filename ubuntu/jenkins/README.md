@@ -22,7 +22,9 @@ Example usage:
   * Poll SCM: `H * * * *`
 * Build
   * Execute shell:
-```cd $WORKSPACE
+
+```
+cd $WORKSPACE
 ./auto/configure \
 --sbin-path=/usr/local/sbin \
 --conf-path=/etc/nginx/nginx.conf \
@@ -41,4 +43,5 @@ Example usage:
 --user=www-data \
 --group=www-data
 make
-./objs/nginx -v```
+./objs/nginx -v
+```

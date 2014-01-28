@@ -10,7 +10,8 @@ Example usage:
 `docker run -p 8080 -d mbentley/ubuntu-jenkins`
 
 
-* Jenkins configuration:
+Jenkins configuration:
+
 * Project name: `nginx`
 * Discard Old Builds: enabled
   * Log Rotation:

@@ -11,7 +11,6 @@ Example usage:
 
 
 Jenkins configuration:
-
 * Project name: `nginx`
 * Discard Old Builds: enabled
   * Log Rotation:

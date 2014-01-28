@@ -5,7 +5,7 @@ RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main universe multiver
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive apt-get install -y wget openjdk-6-jre-headless git-core
+RUN RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive apt-get install -y wget openjdk-6-jre-headless git-core mercurial libpcre3-dev build-essential libssl-dev
 RUN wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
 RUN echo "deb http://pkg.jenkins-ci.org/debian binary/" > /etc/apt/sources.list.d/jenkins.list
 RUN apt-get update
@@ -24,6 +24,7 @@ RUN (cd /var/lib/jenkins/plugins && wget --no-check-certificate http://updates.j
 RUN (cd /var/lib/jenkins/plugins && wget --no-check-certificate http://updates.jenkins-ci.org/latest/git-client.hpi)
 RUN (cd /var/lib/jenkins/plugins && wget --no-check-certificate http://updates.jenkins-ci.org/latest/git.hpi)
 RUN (cd /var/lib/jenkins/plugins && wget --no-check-certificate http://updates.jenkins-ci.org/latest/scm-api.hpi)
+RUN (cd /var/lib/jenkins/plugins && wget --no-check-certificate http://updates.jenkins-ci.org/latest/mercurial.hpi)
 RUN echo "java -jar /usr/share/jenkins/jenkins.war" > /usr/local/bin/run && chmod +x /usr/local/bin/run
 ENV JENKINS_HOME /var/lib/jenkins
 

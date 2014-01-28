@@ -21,7 +21,8 @@ Example usage:
   * Branch: `default`
   * Poll SCM: `H * * * *`
 * Build
-  * Execute shell: ```cd $WORKSPACE
+  * Execute shell:
+```cd $WORKSPACE
 ./auto/configure \
 --sbin-path=/usr/local/sbin \
 --conf-path=/etc/nginx/nginx.conf \

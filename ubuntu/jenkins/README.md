@@ -34,6 +34,7 @@ if [ ! -d ngx_http_auth_pam_module-1.2 ]
 then
 wget http://web.iti.upv.es/~sto/nginx/ngx_http_auth_pam_module-1.2.tar.gz
 tar zxf ngx_http_auth_pam_module-1.2.tar.gz
+rm ngx_http_auth_pam_module-1.2.tar.gz
 fi
 
 ./auto/configure \

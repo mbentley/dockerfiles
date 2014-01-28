@@ -10,18 +10,18 @@ Example usage:
 `docker run -p 8080 -d mbentley/ubuntu-jenkins`
 
 
-Jenkins configuration:
-Project name: `nginx`
-Discard Old Builds: enabled
-   Log Rotation:
-      Days to keep builds: `30`
-      Max # of builds to keep: `30` 
-Mercurial
-   Repository URL: `http://hg.nginx.org/nginx`
-   Branch: `default`
-   Poll SCM: `H * * * *`
-Build
-   Execute shell: `cd $WORKSPACE
+* Jenkins configuration:
+* Project name: `nginx`
+* Discard Old Builds: enabled
+  * Log Rotation:
+     * Days to keep builds: `30`
+     * Max # of builds to keep: `30` 
+* Mercurial
+  * Repository URL: `http://hg.nginx.org/nginx`
+  * Branch: `default`
+  * Poll SCM: `H * * * *`
+* Build
+  * Execute shell: `cd $WORKSPACE
 ./auto/configure \
 --sbin-path=/usr/local/sbin \
 --conf-path=/etc/nginx/nginx.conf \

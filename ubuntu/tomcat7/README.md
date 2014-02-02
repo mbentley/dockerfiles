@@ -9,3 +9,5 @@ To pull this image:
 
 Example usage:
 `docker run -p 8080 -d mbentley/ubuntu-tomcat7`
+
+To deploy a specific .war file to ROOT, see the commented out section of the `Dockerfile`.

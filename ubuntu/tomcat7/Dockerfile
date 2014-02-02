@@ -11,5 +11,9 @@ RUN (cd /opt && tar zxf /tmp/tomcat7.tar.gz)
 RUN (mv /opt/apache-tomcat* /opt/tomcat)
 ADD ./run.sh /usr/local/bin/run
 
+### to deploy a specific war to ROOT, uncomment the following 2 lines and specify the appropriate .war
+#RUN rm -rf /opt/tomcat/webapps/docs /opt/tomcat/webapps/examples /opt/tomcat/webapps/ROOT
+#ADD yourfile.war /opt/tomcat/webapps/ROOT.war
+
 EXPOSE 8080
 CMD ["/bin/sh", "-e", "/usr/local/bin/run"]

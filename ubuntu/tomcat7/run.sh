@@ -10,7 +10,10 @@ cat << EOF > /opt/tomcat/conf/tomcat-users.xml
 </tomcat-users>
 EOF
 
-sed -i "s#.*max-file-size.*#\t<max-file-size>${MAX_UPLOAD_SIZE}</max-file-size>#g" /opt/tomcat/webapps/manager/WEB-INF/web.xml
-sed -i "s#.*max-request-size.*#\t<max-request-size>${MAX_UPLOAD_SIZE}</max-request-size>#g" /opt/tomcat/webapps/manager/WEB-INF/web.xml
+if [ -f "/opt/tomcat/webapps/manager/WEB-INF/web.xml" ]
+then
+	sed -i "s#.*max-file-size.*#\t<max-file-size>${MAX_UPLOAD_SIZE}</max-file-size>#g" /opt/tomcat/webapps/manager/WEB-INF/web.xml
+	sed -i "s#.*max-request-size.*#\t<max-request-size>${MAX_UPLOAD_SIZE}</max-request-size>#g" /opt/tomcat/webapps/manager/WEB-INF/web.xml
+fi
 
 /bin/sh -e /opt/tomcat/bin/catalina.sh run

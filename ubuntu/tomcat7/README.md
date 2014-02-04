@@ -13,9 +13,13 @@ Example usage:
 To deploy a specific .war file to ROOT, see the commented out section of the `Dockerfile`.
 
 The following environment variables can be passed to the docker image:
+
 `ADMIN_USER` (default: admin)
+
 `ADMIN_PASS` (default: tomcat)
+
 `MAX_UPLOAD_SIZE` (default: 52428800)
+
 
 If you would like to start tomcat without any applications deployed and have a local volume mounted to be be able to deploy a .war file by dropping it in, here is an example of that process:
 ```

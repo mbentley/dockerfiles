@@ -35,9 +35,9 @@ then
 	ln -s ${POSTGRESQL_DATA}/cfg/main ${POSTGRESQL_CFGDIR}
 	chown -R postgres:postgres ${POSTGRESQL_DATA}/cfg
 
-	sudo -u postgres $POSTGRESQL_BIN_PATH/postgres --single --config-file=$POSTGRESQL_CONFIG_FILE <<< "CREATE USER $POSTGRESQL_USER WITH SUPERUSER;"
-	sudo -u postgres $POSTGRESQL_BIN_PATH/postgres --single --config-file=$POSTGRESQL_CONFIG_FILE <<< "ALTER USER $POSTGRESQL_USER WITH PASSWORD '$POSTGRESQL_PASS';"
-	sudo -u postgres $POSTGRESQL_BIN_PATH/postgres --single --config-file=$POSTGRESQL_CONFIG_FILE <<< "CREATE DATABASE $POSTGRESQL_DB OWNER $POSTGRESQL_USER ENCODING 'utf8' TEMPLATE template0;"
+	/usr/bin/sudo -u postgres $POSTGRESQL_BIN_PATH/postgres --single --config-file=$POSTGRESQL_CONFIG_FILE <<< "CREATE USER $POSTGRESQL_USER WITH SUPERUSER;"
+	/usr/bin/sudo -u postgres $POSTGRESQL_BIN_PATH/postgres --single --config-file=$POSTGRESQL_CONFIG_FILE <<< "ALTER USER $POSTGRESQL_USER WITH PASSWORD '$POSTGRESQL_PASS';"
+	/usr/bin/sudo -u postgres $POSTGRESQL_BIN_PATH/postgres --single --config-file=$POSTGRESQL_CONFIG_FILE <<< "CREATE DATABASE $POSTGRESQL_DB OWNER $POSTGRESQL_USER ENCODING 'utf8' TEMPLATE template0;"
 	echo 'host all all 0.0.0.0/0 md5' >> /etc/postgresql/9.3/main/pg_hba.conf
 else
 	echo "using existing config..."

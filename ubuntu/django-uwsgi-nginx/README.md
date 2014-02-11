@@ -1,6 +1,8 @@
 mbentley/ubuntu-django-uwsgi-nginx
 ==================
 
+Note:  This is not ready for use and is currently broken
+
 docker image for django (uwsgi) & nginx
 based off of ubuntu:12.04
 

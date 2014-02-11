@@ -18,4 +18,4 @@ ADD run.sh /usr/local/bin/run
 VOLUME ["/data"]
 VOLUME ["/var/log/postgresql"]
 EXPOSE 5432
-CMD ["/bin/bash", "-e", "/usr/local/bin/run"]
+CMD ["/usr/local/bin/run"]

@@ -8,7 +8,8 @@ To pull this image:
 `docker pull mbentley/ubuntu-postgres9.3`
 
 Example usage:
-`docker run -p 5432:5432 -e POSTGRESQL_USER=postgres  -e POSTGRESQL_PASS=password  -e POSTGRESQL_DB=mydb -d mbentley/ubuntu-postgres9.3`
+`docker run -p 5432:5432 -e POSTGRESQL_USER=postgres  -e POSTGRESQL_PASS=password  \
+-e POSTGRESQL_DB=mydb -d mbentley/ubuntu-postgres9.3`
 
 The following environment variables can be passed to the docker image:
 

@@ -12,6 +12,8 @@ POSTGRESQL_DATA=/data
 POSTGRESQL_CFGDIR=/etc/postgresql/9.3/main
 POSTGRESQL_DBDIR=/var/lib/postgresql/9.3/main
 
+chmod 755 ${POSTGRESQL_DATA}
+
 if [ ! -d "${POSTGRESQL_DATA}/db" ]
 then
 	echo "no data; moving..."

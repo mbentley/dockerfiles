@@ -5,20 +5,19 @@ RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main universe multiver
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN apt-get install -y supervisor nginx-full uwsgi uwsgi-plugin-python
+RUN apt-get install -y build-essential git python python-dev python-setuptools nginx sqlite3 supervisor
+RUN easy_install pip
+RUN pip install uwsgi
+
+ADD . /opt/django/
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD nginx-config.conf /etc/nginx/sites-enabled/example.conf
 RUN rm /etc/nginx/sites-enabled/default
+RUN ln -s /opt/django/django.conf /etc/nginx/sites-enabled/
+RUN ln -s /opt/django/supervisord.conf /etc/supervisor/conf.d/
 
-RUN mkdir -p /var/www/example/public_html/static
-RUN mkdir  /var/www/example/application
-RUN mkdir  /var/www/example/logs
-ADD example.xml /etc/uwsgi/apps-available/example.xml
-RUN ln -s /etc/uwsgi/apps-available/example.xml /etc/uwsgi/apps-enabled/example.xml
-
-ADD wsgi_configuration_module.py /var/www/example/application/wsgi_configuration_module.py
+RUN pip install -r /opt/django/app/requirements.txt
 
 EXPOSE 80
-CMD ["/usr/bin/supervisord"]
+VOLUME ["/opt/django/app"]
+CMD ["/opt/django/run.sh"]

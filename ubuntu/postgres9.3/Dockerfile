@@ -16,5 +16,4 @@ ADD run.sh /usr/local/bin/run
 
 VOLUME ["/var/lib/postgresql/9.3/main"]
 VOLUME ["/var/log/postgresql"]
-EXPOSE 5432
 CMD ["/usr/local/bin/run"]

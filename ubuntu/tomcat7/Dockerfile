@@ -15,5 +15,4 @@ ADD ./run.sh /usr/local/bin/run
 #RUN rm -rf /opt/tomcat/webapps/docs /opt/tomcat/webapps/examples /opt/tomcat/webapps/ROOT
 #ADD yourfile.war /opt/tomcat/webapps/ROOT.war
 
-EXPOSE 8080
 CMD ["/bin/sh", "-e", "/usr/local/bin/run"]

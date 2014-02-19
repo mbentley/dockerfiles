@@ -5,7 +5,7 @@ RUN echo "deb http://ftp.us.debian.org/debian wheezy main contrib non-free" > /e
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN apt-get install git live-build
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git live-build
 RUN mkdir /opt/live
 ADD run.sh /usr/local/bin/run
 

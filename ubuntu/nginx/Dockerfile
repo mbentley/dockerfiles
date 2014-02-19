@@ -13,6 +13,5 @@ RUN mkdir -p /var/www
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-VOLUME ["/var/log/nginx"]
-VOLUME ["/var/www"]
+VOLUME ["/var/log/nginx", "/var/www"]
 CMD ["/usr/bin/supervisord"]

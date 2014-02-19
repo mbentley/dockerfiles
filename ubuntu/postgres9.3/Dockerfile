@@ -14,6 +14,5 @@ RUN RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive apt-get -y install postgresql-9.3 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD run.sh /usr/local/bin/run
 
-VOLUME ["/var/lib/postgresql/9.3/main"]
-VOLUME ["/var/log/postgresql"]
+VOLUME ["/var/lib/postgresql/9.3/main", "/var/log/postgresql"]
 CMD ["/usr/local/bin/run"]

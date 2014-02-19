@@ -7,7 +7,11 @@ RUN apt-get -y upgrade
 
 RUN apt-get install -y nginx supervisor
 
+ADD default /etc/nginx/sites-available/default
+RUN mkdir -p /var/www
+
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN echo "hello world" > /var/www/index.html
 
 CMD ["/usr/bin/supervisord"]

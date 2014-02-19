@@ -1,9 +1,10 @@
-mbentley/debian-base
+mbentley/debian-overclockix
 ==================
 
-Base docker image for Debian Wheezy
+docker image for building Overclockix on Debian Wheezy
 
 To pull this image:
-`docker pull mbentley/debian-base`
+`docker pull mbentley/debian-overclockix`
 
-This should be used as a template for new images.
+Example usage:
+`docker run -i -t -v /data/live:/opt/live mbentley/debian-overclockix`

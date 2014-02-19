@@ -12,6 +12,7 @@ RUN mkdir -p /var/www
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-RUN echo "hello world" > /var/www/index.html
 
+VOLUME ["/var/log/nginx"]
+VOLUME ["/var/www"]
 CMD ["/usr/bin/supervisord"]

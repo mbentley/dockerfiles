@@ -8,6 +8,6 @@ To pull this image:
 `docker pull mbentley/ubuntu-nginx`
 
 Example usage:
-`docker run -p 80 -d mbentley/ubuntu-nginx`
+`docker run -i -t -p 80 -v /data/logs:/var/log/nginx -v /data/www:/var/www mbentley/ubuntu-nginx`
 
-By default, this just runs a unconfigured nginx container which can be customized.
+By default, this just runs a basic nginx server that listens on port 80.  The default webroot is `/var/www`.

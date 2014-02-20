@@ -11,3 +11,4 @@ ADD run.sh /usr/local/bin/run
 
 VOLUME ["/opt/live"]
 ENTRYPOINT ["/usr/local/bin/run"]
+CMD ["bash"]

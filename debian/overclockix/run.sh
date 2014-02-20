@@ -1,6 +1,7 @@
 #!/bin/bash
 
 action=${1:-}
+buildopts=${2:-}
 aptproxy=${aptproxy:-}
 
 cd /opt/live
@@ -15,34 +16,39 @@ fi
 
 /opt/live/overclockix/scripts/create_hard_links
 
-case $action in
-	buildall)
+case $action:$buildopts in
+	build:all)
 		/opt/live/overclockix/i386_iso-hybrid/build.sh "${aptproxy}"
 		/opt/live/overclockix/i386_usb-hdd/build.sh "${aptproxy}"
 		/opt/live/overclockix/amd64_iso-hybrid/build.sh "${aptproxy}"
 		/opt/live/overclockix/amd64_usb-hdd/build.sh "${aptproxy}"
 		;;
-	buildi386)
+	build:i386)
 		/opt/live/overclockix/i386_iso-hybrid/build.sh "${aptproxy}"
 		/opt/live/overclockix/i386_usb-hdd/build.sh "${aptproxy}"
 		;;
-	buildamd64)
+	build:amd64)
 		/opt/live/overclockix/amd64_iso-hybrid/build.sh "${aptproxy}"
 		/opt/live/overclockix/amd64_usb-hdd/build.sh "${aptproxy}"
 		;;
-	buildi386_iso-hybrid)
+	build:i386_iso-hybrid)
 		/opt/live/overclockix/i386_iso-hybrid/build.sh "${aptproxy}"
 		;;
-	buildi386_usb-hdd)
+	build:i386_usb-hdd)
 		/opt/live/overclockix/i386_usb-hdd/build.sh "${aptproxy}"
 		;;
-	buildamd64_iso-hybrid)
+	build:amd64_iso-hybrid)
 		/opt/live/overclockix/amd64_iso-hybrid/build.sh "${aptproxy}"
 		;;
-	buildamd64_usb-hdd)
+	build:amd64_usb-hdd)
 		/opt/live/overclockix/amd64_usb-hdd/build.sh "${aptproxy}"
 		;;
-	bash|*)
+	bash:*)
 		/bin/bash
+		;;
+	*:*)
+		echo "Invalid build argument specified"
+		echo "Usage: $0 {build|bash} {all|i386|amd64|i386_iso-hybrid|i386_usb-hdd|amd64_iso-hybrid|amd64_usb-hdd}"
+		exit 1
 		;;
 esac

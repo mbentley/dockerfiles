@@ -4,6 +4,9 @@ action=${1:-}
 buildopts=${2:-}
 aptproxy=${aptproxy:-}
 
+#echo 'LB_MIRROR_BINARY="http://ftp.debian.org/debian/"' > /etc/live/build.conf
+#echo 'LB_MIRROR_BINARY_SECURITY="http://security.debian.org/"' >> /etc/live/build.conf
+
 cd /opt/live
 
 if [ ! -d /opt/live/overclockix ]

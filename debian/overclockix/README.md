@@ -16,7 +16,7 @@ You can specify how you would like to launch the build environment:
 
 `bash` or no argument - Starts a bash session inside the container
 
-`build all` - Builds all flavors
+`build all` - Builds all flavors & image types
 
 `build i386` - Builds all i386 images
 

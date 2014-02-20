@@ -30,6 +30,18 @@ case $action in
 		/opt/live/overclockix/amd64_iso-hybrid/build.sh $proxy
 		/opt/live/overclockix/amd64_usb-hdd/build.sh $proxy
 		;;
+	buildi386_iso-hybrid)
+		/opt/live/overclockix/i386_iso-hybrid/build.sh $proxy
+		;;
+	buildi386_usb-hdd)
+		/opt/live/overclockix/i386_usb-hdd/build.sh $proxy
+		;;
+	buildamd64_iso-hybrid)
+		/opt/live/overclockix/amd64_iso-hybrid/build.sh $proxy
+		;;
+	buildamd64_usb-hdd)
+		/opt/live/overclockix/amd64_usb-hdd/build.sh $proxy
+		;;
 	bash|*)
 		/bin/bash
 		;;

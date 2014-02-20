@@ -29,6 +29,6 @@ You can specify how you would like to launch the build environment:
 
 There is also an environment variable you may specify for configuring live-build to use a proxy (like apt-cacher-ng)
 
-`apt-proxy` - Defaults to none
+`aptproxy` - Defaults to none
 
 *Note:* You must run the container with the `-privileged` argument for debootstrap to work.

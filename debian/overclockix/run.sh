@@ -1,7 +1,7 @@
 #!/bin/bash
 
 action=${1:-}
-apt-proxy=${apt-proxy:-}
+aptproxy=${aptproxy:-}
 
 cd /opt/live
 
@@ -17,30 +17,30 @@ fi
 
 case $action in
 	buildall)
-		/opt/live/overclockix/i386_iso-hybrid/build.sh $proxy
-		/opt/live/overclockix/i386_usb-hdd/build.sh $proxy
-		/opt/live/overclockix/amd64_iso-hybrid/build.sh $proxy
-		/opt/live/overclockix/amd64_usb-hdd/build.sh $proxy
+		/opt/live/overclockix/i386_iso-hybrid/build.sh "${aptproxy}"
+		/opt/live/overclockix/i386_usb-hdd/build.sh "${aptproxy}"
+		/opt/live/overclockix/amd64_iso-hybrid/build.sh "${aptproxy}"
+		/opt/live/overclockix/amd64_usb-hdd/build.sh "${aptproxy}"
 		;;
 	buildi386)
-		/opt/live/overclockix/i386_iso-hybrid/build.sh $proxy
-		/opt/live/overclockix/i386_usb-hdd/build.sh $proxy
+		/opt/live/overclockix/i386_iso-hybrid/build.sh "${aptproxy}"
+		/opt/live/overclockix/i386_usb-hdd/build.sh "${aptproxy}"
 		;;
 	buildamd64)
-		/opt/live/overclockix/amd64_iso-hybrid/build.sh $proxy
-		/opt/live/overclockix/amd64_usb-hdd/build.sh $proxy
+		/opt/live/overclockix/amd64_iso-hybrid/build.sh "${aptproxy}"
+		/opt/live/overclockix/amd64_usb-hdd/build.sh "${aptproxy}"
 		;;
 	buildi386_iso-hybrid)
-		/opt/live/overclockix/i386_iso-hybrid/build.sh $proxy
+		/opt/live/overclockix/i386_iso-hybrid/build.sh "${aptproxy}"
 		;;
 	buildi386_usb-hdd)
-		/opt/live/overclockix/i386_usb-hdd/build.sh $proxy
+		/opt/live/overclockix/i386_usb-hdd/build.sh "${aptproxy}"
 		;;
 	buildamd64_iso-hybrid)
-		/opt/live/overclockix/amd64_iso-hybrid/build.sh $proxy
+		/opt/live/overclockix/amd64_iso-hybrid/build.sh "${aptproxy}"
 		;;
 	buildamd64_usb-hdd)
-		/opt/live/overclockix/amd64_usb-hdd/build.sh $proxy
+		/opt/live/overclockix/amd64_usb-hdd/build.sh "${aptproxy}"
 		;;
 	bash|*)
 		/bin/bash

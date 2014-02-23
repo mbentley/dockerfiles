@@ -8,7 +8,7 @@ To pull this image:
 
 Example usage:
 ```
-docker run -privileged -i -t -e apt-proxy=http://192.168.56.2:3142 \
+docker run -privileged -i -t -e aptproxy=http://192.168.56.2:3142 \
    -v /opt/live:/opt/live mbentley/debian-overclockix build all
 ```
 

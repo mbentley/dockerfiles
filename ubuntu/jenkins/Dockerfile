@@ -29,5 +29,4 @@ RUN echo "java -jar /usr/share/jenkins/jenkins.war" > /usr/local/bin/run && chmo
 ENV JENKINS_HOME /var/lib/jenkins
 
 VOLUME /var/lib/jenkins
-#CMD ["java", "-jar", "/usr/share/jenkins/jenkins.war"]
-CMD ["java", "-Dorg.apache.commons.jelly.tags.fmt.timeZone=America/New_York", "-jar", "/usr/share/jenkins/jenkins.war"]
+CMD ["java", "-jar", "/usr/share/jenkins/jenkins.war"]

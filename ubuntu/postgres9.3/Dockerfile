@@ -15,4 +15,5 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD run.sh /usr/local/bin/run
 
 VOLUME ["/var/lib/postgresql/9.3/main", "/var/log/postgresql"]
+EXPOSE 5432
 CMD ["/usr/local/bin/run"]

@@ -29,4 +29,5 @@ RUN echo "java -jar /usr/share/jenkins/jenkins.war" > /usr/local/bin/run && chmo
 ENV JENKINS_HOME /var/lib/jenkins
 
 VOLUME /var/lib/jenkins
+EXPOSE 8080
 CMD ["java", "-jar", "/usr/share/jenkins/jenkins.war"]

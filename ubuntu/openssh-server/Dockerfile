@@ -13,4 +13,5 @@ RUN bin/bash /configure.sh && rm /configure.sh
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+EXPOSE 22
 CMD ["/usr/bin/supervisord"]

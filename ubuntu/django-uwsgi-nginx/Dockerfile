@@ -19,4 +19,5 @@ RUN ln -s /opt/django/supervisord.conf /etc/supervisor/conf.d/
 RUN pip install -r /opt/django/app/requirements.txt
 
 VOLUME ["/opt/django/app"]
+EXPOSE 80
 CMD ["/opt/django/run.sh"]

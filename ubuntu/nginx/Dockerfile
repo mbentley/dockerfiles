@@ -14,4 +14,5 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 VOLUME ["/var/log/nginx", "/var/www"]
+EXPOSE 80
 CMD ["/usr/bin/supervisord"]

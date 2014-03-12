@@ -9,7 +9,7 @@ To pull this image:
 Example usage:
 ```
 docker run -privileged -i -t -e aptproxy=http://192.168.56.2:3142 \
-   -v /opt/live:/opt/live mbentley/debian-overclockix build all
+   -e branch=master -v /opt/live:/opt/live mbentley/debian-overclockix build all
 ```
 
 You can specify how you would like to launch the build environment:
@@ -30,8 +30,11 @@ You can specify how you would like to launch the build environment:
 
 `build amd64_usb-hdd` - Builds amd64; usb-hdd
 
-There is also an environment variable you may specify for configuring live-build to use a proxy (like apt-cacher-ng)
 
-`aptproxy` - Defaults to none
+There are also environment variables you may specify:
+
+`aptproxy` - configures live-build to use an apt- proxy (defaults - none)
+
+`branch` - specifies which branch of [Overclockix](https://github.com/mbentley/overclockix) you would like to build (default - master)
 
 *Note:* You must run the container with the `-privileged` argument for debootstrap to work.

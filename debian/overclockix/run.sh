@@ -3,6 +3,7 @@
 action=${1:-}
 buildopts=${2:-}
 aptproxy=${aptproxy:-}
+branch=${branch:master}
 
 #echo 'LB_MIRROR_BOOTSTRAP="http://ftp.debian.org/debian"' > /etc/live/build.conf
 #echo 'LB_MIRROR_CHROOT="http://ftp.debian.org/debian"' >> /etc/live/build.conf
@@ -15,9 +16,12 @@ cd /opt/live
 if [ ! -d /opt/live/overclockix ]
 then
 	git clone https://github.com/mbentley/overclockix.git
+	cd overclockix
+	git checkout ${branch}
 else
 	cd overclockix
 	git pull
+	git checkout ${branch}
 fi
 
 /opt/live/overclockix/scripts/create_hard_links

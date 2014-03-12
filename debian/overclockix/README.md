@@ -8,7 +8,7 @@ To pull this image:
 
 Example usage:
 ```
-docker run -privileged -i -t -e aptproxy=http://192.168.56.2:3142 \
+docker run --privileged -i -t -e aptproxy=http://192.168.56.2:3142 \
    -e branch=master -v /opt/live:/opt/live mbentley/debian-overclockix build all
 ```
 
@@ -37,4 +37,4 @@ There are also environment variables you may specify:
 
 `branch` - specifies which branch of [Overclockix](https://github.com/mbentley/overclockix) you would like to build (default - master)
 
-*Note:* You must run the container with the `-privileged` argument for debootstrap to work.
+*Note:* You must run the container with the `--privileged` argument for debootstrap to work.

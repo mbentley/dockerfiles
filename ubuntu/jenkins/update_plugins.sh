@@ -15,6 +15,8 @@ cd $SCRIPT_HOME/plugins
 #wget -nv -N --no-check-certificate http://updates.jenkins-ci.org/latest/ssh-agent.hpi
 #wget -nv -N --no-check-certificate http://updates.jenkins-ci.org/latest/git-client.hpi
 #wget -nv -N --no-check-certificate http://updates.jenkins-ci.org/latest/git.hpi
+#wget -nv -N --no-check-certificate http://updates.jenkins-ci.org/latest/github-api.hpi
+#wget -nv -N --no-check-certificate http://updates.jenkins-ci.org/latest/github.hpi
 #wget -nv -N --no-check-certificate http://updates.jenkins-ci.org/latest/scm-api.hpi
 #wget -nv -N --no-check-certificate http://updates.jenkins-ci.org/latest/mercurial.hpi
 
@@ -29,5 +31,7 @@ wget -nv -N --no-check-certificate http://ftp-nyc.osuosl.org/pub/jenkins/plugins
 wget -nv -N --no-check-certificate http://ftp-nyc.osuosl.org/pub/jenkins/plugins/ssh-agent/latest/ssh-agent.hpi
 wget -nv -N --no-check-certificate http://ftp-nyc.osuosl.org/pub/jenkins/plugins/git-client/latest/git-client.hpi
 wget -nv -N --no-check-certificate http://ftp-nyc.osuosl.org/pub/jenkins/plugins/git/latest/git.hpi
+wget -nv -N --no-check-certificate http://ftp-nyc.osuosl.org/pub/jenkins/plugins/github-api/latest/github-api.hpi
+wget -nv -N --no-check-certificate http://ftp-nyc.osuosl.org/pub/jenkins/plugins/github/latest/github.hpi
 wget -nv -N --no-check-certificate http://ftp-nyc.osuosl.org/pub/jenkins/plugins/scm-api/latest/scm-api.hpi
 wget -nv -N --no-check-certificate http://ftp-nyc.osuosl.org/pub/jenkins/plugins/mercurial/latest/mercurial.hpi

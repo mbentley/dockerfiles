@@ -16,7 +16,6 @@ RUN (cd /opt/PtokaX && make)
 ADD PtokaX.conf /etc/supervisor/conf.d/PtokaX.conf
 ADD run.sh /usr/local/bin/run
 
-#VOLUME ["/var/log/nginx", "/var/www"]
 EXPOSE 1209
 EXPOSE 411
 CMD ["/usr/local/bin/run"]

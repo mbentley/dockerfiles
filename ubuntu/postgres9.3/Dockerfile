@@ -11,7 +11,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc
 RUN apt-get update
 RUN RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive apt-get -y install postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD postgres.conf /etc/supervisor/conf.d/postgres.conf
 ADD run.sh /usr/local/bin/run
 
 VOLUME ["/var/lib/postgresql/9.3/main", "/var/log/postgresql"]

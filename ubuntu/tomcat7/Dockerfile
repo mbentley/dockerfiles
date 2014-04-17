@@ -5,8 +5,10 @@ RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main universe multiver
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN apt-get install -y openjdk-7-jre-headless wget
-RUN wget -O /tmp/tomcat7.tar.gz http://mirror.cogentco.com/pub/apache/tomcat/tomcat-7/v7.0.52/bin/apache-tomcat-7.0.52.tar.gz
+ENV TOMCATVER 7.0.53
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-7-jre-headless wget
+RUN wget -O /tmp/tomcat7.tar.gz http://mirror.cogentco.com/pub/apache/tomcat/tomcat-7/v${TOMCATVER}/bin/apache-tomcat-${TOMCATVER}.tar.gz
 RUN (cd /opt && tar zxf /tmp/tomcat7.tar.gz)
 RUN (mv /opt/apache-tomcat* /opt/tomcat)
 ADD ./run.sh /usr/local/bin/run

@@ -20,6 +20,7 @@ The following environment variables can be passed to the docker image:
 
 `MAX_UPLOAD_SIZE` (default: 52428800)
 
+`CATALINA_OPTS` (default: "-Xms128m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=256m")
 
 If you would like to start tomcat without any applications deployed and have a local volume mounted to be be able to deploy a .war file by dropping it in, here is an example of that process:
 ```

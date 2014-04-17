@@ -13,7 +13,7 @@ POSTGRESQL_DATA=/var/lib/postgresql/9.3/main
 # initialize db if needed
 if [ ! "`ls -A $POSTGRESQL_DATA`" ] ; then
 	chown -R postgres $POSTGRESQL_DATA
-	su postgres sh -c "$POSTGRESQL_INITDB $POSTGRESQL_DATA"
+	su postgres sh -c "$POSTGRESQL_INITDB --locale=en_US.UTF-8 $POSTGRESQL_DATA"
 fi
 
 su postgres /bin/bash -c "$POSTGRESQL_BIN_PATH/postgres --single -c config_file=$POSTGRESQL_CONFIG_FILE" <<< "CREATE USER $POSTGRESQL_USER WITH SUPERUSER PASSWORD '$POSTGRESQL_PASS';"

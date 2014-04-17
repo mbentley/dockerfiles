@@ -1,4 +1,4 @@
-mbentley/ubuntu-mongodb
+mbentley/ubuntu-mongodb2.2.7
 ==================
 
 docker image for mongodb

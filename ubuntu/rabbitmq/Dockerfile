@@ -16,6 +16,7 @@ RUN echo "ulimit -n 1024" >> /etc/default/rabbitmq-server
 ADD rabbitmq.conf /etc/supervisor/conf.d/rabbitmq.conf
 ADD run.sh /usr/local/bin/run
 
+VOLUME ["/var/lib/rabbitmq"]
 EXPOSE 5672
 EXPOSE 15672
 CMD ["/usr/local/bin/run"]

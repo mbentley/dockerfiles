@@ -14,5 +14,5 @@ RUN RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive apt-get -y install pgbouncer
 ADD pgbouncer.conf /etc/supervisor/conf.d/pgbouncer.conf
 ADD run.sh /usr/local/bin/run
 
-EXPOSE 6543
+EXPOSE 6432
 CMD ["/usr/local/bin/run"]

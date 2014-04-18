@@ -26,6 +26,7 @@ pool_mode = session
 server_reset_query = DISCARD ALL
 max_client_conn = 100
 default_pool_size = 20
+ignore_startup_parameters = extra_float_digits
 EOF
 fi
 

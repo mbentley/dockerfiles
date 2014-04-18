@@ -1,8 +1,10 @@
 mbentley/ubuntu-tomcat7-oracle
 ==================
 
-docker image for tomcat7
+docker image for tomcat7 (with Oracle JRE)
 based off of ubuntu:12.04
+
+Note:  For Tomcat 7 with OpenJDK JRE, use mbentley/ubuntu-tomcat7
 
 To pull this image:
 `docker pull mbentley/ubuntu-tomcat7-oracle`

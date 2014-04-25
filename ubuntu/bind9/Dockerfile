@@ -5,10 +5,9 @@ RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main universe multiver
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN apt-get install -y bind9 supervisor
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bind9
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD named.conf.options /etc/bind/named.conf.options
 
 EXPOSE 53
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/sbin/named","-c","/etc/bind/named.conf","-f"]

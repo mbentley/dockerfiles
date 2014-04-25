@@ -5,13 +5,11 @@ RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main universe multiver
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN apt-get install -y openssh-server supervisor
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openssh-server
 
 ADD authorized_keys /authorized_keys
 ADD configure.sh /configure.sh
 RUN bin/bash /configure.sh && rm /configure.sh
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
 EXPOSE 22
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/sbin/sshd","-D"]

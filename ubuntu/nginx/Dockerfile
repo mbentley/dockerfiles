@@ -5,16 +5,13 @@ RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main universe multiver
 RUN apt-get update
 RUN apt-get -y upgrade
 
-#RUN apt-get install -y nginx supervisor
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nginx
 
 ADD default /etc/nginx/sites-available/default
 RUN mkdir -p /var/www
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-#ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 VOLUME ["/var/log/nginx", "/var/www"]
 EXPOSE 80
-#CMD ["/usr/bin/supervisord"]
 CMD ["nginx","-c","/etc/nginx/nginx.conf"]

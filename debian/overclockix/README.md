@@ -33,7 +33,7 @@ You can specify how you would like to launch the build environment:
 
 There are also environment variables you may specify:
 
-`aptproxy` - configures live-build to use an apt- proxy (defaults - none)
+`aptproxy` - configures live-build to use an apt-proxy (defaults - none)
 
 `branch` - specifies which branch of [Overclockix](https://github.com/mbentley/overclockix) you would like to build (default - master)
 

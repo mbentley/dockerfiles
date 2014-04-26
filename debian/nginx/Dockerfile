@@ -19,8 +19,6 @@ RUN mkdir -p /var/lib/nginx /etc/nginx/sites-enabled /etc/nginx/sites-available 
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD default /etc/nginx/sites-available/default
 
-#RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-
 VOLUME ["/var/log/nginx", "/var/www"]
 EXPOSE 80
 CMD ["/usr/local/sbin/nginx","-c","/etc/nginx/nginx.conf"]

@@ -1,11 +1,9 @@
-FROM ubuntu:12.04
+FROM stackbrew/ubuntu:12.04
 MAINTAINER Matt Bentley <mbentley@mbentley.net>
-
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main universe multiverse" > /etc/apt/sources.list
+RUN (echo "deb http://archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse" > /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse" >> /etc/apt/sources.list)
 RUN apt-get update
-RUN apt-get -y upgrade
 
-RUN apt-get install -y build-essential git python python-dev python-setuptools nginx sqlite3 supervisor
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential git python python-dev python-setuptools nginx sqlite3 supervisor
 RUN easy_install pip
 RUN pip install uwsgi
 

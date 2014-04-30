@@ -1,9 +1,7 @@
-FROM ubuntu:12.04
+FROM stackbrew/ubuntu:12.04
 MAINTAINER Matt Bentley <mbentley@mbentley.net>
-
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main universe multiverse" > /etc/apt/sources.list
+RUN (echo "deb http://archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse" > /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse" >> /etc/apt/sources.list)
 RUN apt-get update
-RUN apt-get -y upgrade
 
 ENV TOMCATVER 7.0.53
 
@@ -18,7 +16,6 @@ RUN chown root:root -R /usr/lib/jvm/java-7-oracle
 RUN update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-7-oracle/jre/bin/java 1
 RUN update-alternatives --set java /usr/lib/jvm/java-7-oracle/jre/bin/java
 
-#RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-7-jre-headless wget
 RUN wget -O /tmp/tomcat7.tar.gz http://mirror.cogentco.com/pub/apache/tomcat/tomcat-7/v${TOMCATVER}/bin/apache-tomcat-${TOMCATVER}.tar.gz
 RUN (cd /opt && tar zxf /tmp/tomcat7.tar.gz)
 RUN (mv /opt/apache-tomcat* /opt/tomcat)

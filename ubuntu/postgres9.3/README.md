@@ -2,7 +2,7 @@ mbentley/ubuntu-postgres9.3
 ==================
 
 docker image for postgres 9.3
-based off of ubuntu:12.04
+based off of stackbrew/ubuntu:12.04
 
 To pull this image:
 `docker pull mbentley/ubuntu-postgres9.3`

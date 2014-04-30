@@ -2,7 +2,7 @@ mbentley/ubuntu-nginx
 ==================
 
 docker image for nginx
-based off of ubuntu:12.04
+based off of stackbrew/ubuntu:12.04
 
 To pull this image:
 `docker pull mbentley/ubuntu-nginx`

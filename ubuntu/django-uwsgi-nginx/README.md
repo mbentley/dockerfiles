@@ -2,7 +2,7 @@ mbentley/ubuntu-django-uwsgi-nginx
 ==================
 
 docker image for django (uwsgi) & nginx
-based off of ubuntu:12.04
+based off of stackbrew/ubuntu:12.04
 
 To pull this image:
 `docker pull mbentley/ubuntu-django-uwsgi-nginx`

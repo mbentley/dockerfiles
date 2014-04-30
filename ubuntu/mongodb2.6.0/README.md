@@ -2,7 +2,7 @@ mbentley/ubuntu-mongodb2.6.0
 ==================
 
 docker image for mongodb
-based off of ubuntu:12.04
+based off of stackbrew/ubuntu:12.04
 
 To pull this image:
 `docker pull mbentley/ubuntu-mongodb2.6.0`

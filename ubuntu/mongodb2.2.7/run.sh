@@ -17,6 +17,14 @@ then
 	mongo admin --eval 'db.shutdownServer();'
 
 	touch /data/db/mongodb_root_init
+
+	echo "Waiting for mongodb to shutdown"
+	while [ -s /data/db/mongod.lock ]
+	do
+		echo -ne "."
+		sleep .05
+	done
+	echo -ne "done\n\n"
 fi
 
-/usr/bin/supervisord
+/opt/mongodb/bin/mongod --rest --auth

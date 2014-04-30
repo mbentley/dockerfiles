@@ -10,4 +10,4 @@ then
 	echo '[{rabbit, [{loopback_users, []}]}].' > /etc/rabbitmq/rabbitmq.config
 fi
 
-/usr/bin/supervisord
+/usr/sbin/rabbitmq-server start

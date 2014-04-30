@@ -1,9 +1,7 @@
-FROM debian:wheezy
+FROM stackbrew/debian:wheezy
 MAINTAINER Matt Bentley <mbentley@mbentley.net>
-
-RUN echo "deb http://ftp.us.debian.org/debian wheezy main contrib non-free" > /etc/apt/sources.list
+RUN (echo "deb http://http.debian.net/debian/ wheezy main contrib non-free" > /etc/apt/sources.list && echo "deb http://http.debian.net/debian/ wheezy-updates main contrib non-free" >> /etc/apt/sources.list && echo "deb http://security.debian.org/ wheezy/updates main contrib non-free" >> /etc/apt/sources.list)
 RUN apt-get update
-RUN apt-get -y upgrade
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git live-build
 RUN mkdir /opt/live

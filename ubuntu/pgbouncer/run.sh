@@ -40,4 +40,4 @@ chown root:postgres /var/log/postgresql
 chmod 1775 /var/log/postgresql
 chmod 640 /etc/pgbouncer/userlist.txt
 
-/usr/bin/supervisord
+/usr/sbin/pgbouncer -u postgres /etc/pgbouncer/pgbconf.ini

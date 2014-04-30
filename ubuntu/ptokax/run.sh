@@ -5,6 +5,13 @@ PASSWORD=${PASSWORD:-password}
 
 if [ ! -d /opt/PtokaX/cfg ]
 then
+
+if [ -z ${HUB} ]
+then
+	echo "You must specify a hub name using the HUB environment variable; exiting."
+	exit 1
+fi
+
 cp -r /opt/PtokaX/cfg.example /opt/PtokaX/cfg
 
 cat << EOF > /opt/PtokaX/cfg/Settings.xml
@@ -40,4 +47,4 @@ Welcome to PtokaX ($HUB)
 EOF
 fi
 
-/usr/bin/supervisord
+/opt/PtokaX/PtokaX -c /opt/PtokaX

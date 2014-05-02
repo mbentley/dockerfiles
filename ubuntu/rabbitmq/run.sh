@@ -3,7 +3,7 @@
 #RMQ_USER=${RMQ_USER:-guest}
 #RMQ_PASS=${RMQ_PASS:-guest}
 
-chown rabbitmq:rabbitmq /var/lib/rabbitmq
+chown -R rabbitmq:rabbitmq /var/lib/rabbitmq
 
 if [ ! -f /etc/rabbitmq/rabbitmq.config ]
 then

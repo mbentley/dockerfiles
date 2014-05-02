@@ -10,6 +10,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install rabbitmq-server
 
 RUN echo "ulimit -n 1024" >> /etc/default/rabbitmq-server
+RUN rabbitmq-plugins enable rabbitmq_management
 
 ADD run.sh /usr/local/bin/run
 

@@ -1,0 +1,29 @@
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+#  adapter: postgresql
+#  host: localhost
+#  port: 5432
+#  encoding: utf8
+#  reconnect: true
+#  database: CASino
+#  pool: 5
+#  username: <%= ENV['PG_ENV_POSTGRESQL_USER'] %>
+#  password: <%= ENV['PG_ENV_POSTGRESQL_PASS'] %>
+production:
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  encoding: utf8
+  reconnect: true
+  database: CASino
+  pool: 5
+  username: <%= ENV['PG_ENV_POSTGRESQL_USER'] %>
+  password: <%= ENV['PG_ENV_POSTGRESQL_PASS'] %>

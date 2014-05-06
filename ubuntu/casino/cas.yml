@@ -1,0 +1,22 @@
+development:
+  frontend:
+    sso_name: 'eDMEPlus'
+    footer_text: 'Powered by <a href="http://rbcas.com/">CASino</a>'
+  authenticators:
+    edmeplus_pg_database:
+      authenticator: ActiveRecord
+      options:
+        connection:
+          adapter: postgresql
+          host: <%= ENV['PG_PORT_5432_TCP_ADDR'] %>
+          port: <%= ENV['PG_PORT_5432_TCP_PORT'] %>
+          username: <%= ENV['PG_ENV_POSTGRESQL_USER'] %>
+          password: <%= ENV['PG_ENV_POSTGRESQL_PASS'] %>
+          database: <%= ENV['PG_ENV_POSTGRESQL_DB'] %>
+        table: person
+        username_column: username
+        password_column: password
+#        extra_attributes:
+#          email: email
+#          firstname: first_name
+#          lastname: last_name

@@ -10,9 +10,13 @@ POSTGRESQL_INITDB=/usr/lib/postgresql/9.3/bin/initdb
 POSTGRESQL_CONFIG_FILE=/etc/postgresql/9.3/main/postgresql.conf
 POSTGRESQL_DATA=/var/lib/postgresql/9.3/main
 
+if [ -d $POSTGRESQL_DATA ]
+then
+	chown -R postgres:postgres $POSTGRESQL_DATA
+fi
+
 # initialize db if needed
 if [ ! "`ls -A $POSTGRESQL_DATA`" ] ; then
-	chown -R postgres $POSTGRESQL_DATA
 	su postgres sh -c "$POSTGRESQL_INITDB --locale=en_US.UTF-8 $POSTGRESQL_DATA"
 fi
 

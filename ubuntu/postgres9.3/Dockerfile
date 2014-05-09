@@ -16,6 +16,9 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3
 
+RUN echo 'host all all 0.0.0.0/0 md5' >> /etc/postgresql/9.3/main/pg_hba.conf
+RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
+
 ADD run.sh /usr/local/bin/run
 
 VOLUME ["/var/lib/postgresql/9.3/main", "/var/log/postgresql"]

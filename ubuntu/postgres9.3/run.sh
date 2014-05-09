@@ -23,6 +23,4 @@ fi
 su postgres /bin/bash -c "$POSTGRESQL_BIN_PATH/postgres --single -c config_file=$POSTGRESQL_CONFIG_FILE" <<< "CREATE USER $POSTGRESQL_USER WITH SUPERUSER PASSWORD '$POSTGRESQL_PASS';"
 su postgres /bin/bash -c "$POSTGRESQL_BIN_PATH/postgres --single -c config_file=$POSTGRESQL_CONFIG_FILE" <<< "CREATE DATABASE $POSTGRESQL_DB WITH OWNER $POSTGRESQL_USER ENCODING 'utf8' TEMPLATE template0;"
 
-echo 'host all all 0.0.0.0/0 md5' >> /etc/postgresql/9.3/main/pg_hba.conf
-echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 su postgres -c "/usr/lib/postgresql/9.3/bin/postgres -D /var/lib/postgresql/9.3/main --config_file=/etc/postgresql/9.3/main/postgresql.conf"

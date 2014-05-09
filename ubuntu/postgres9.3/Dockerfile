@@ -3,8 +3,8 @@ MAINTAINER Matt Bentley <mbentley@mbentley.net>
 RUN (echo "deb http://archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse" > /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse" >> /etc/apt/sources.list)
 RUN apt-get update
 
-ENV LANGUAGE en_US.UTF-8
 ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 RUN DEBIAN_FRONTEND=noninteractive locale-gen en_US.UTF-8
 RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales

@@ -3,7 +3,7 @@ MAINTAINER Matt Bentley <mbentley@mbentley.net>
 RUN (echo "deb http://http.debian.net/debian/ wheezy main contrib non-free" > /etc/apt/sources.list && echo "deb http://http.debian.net/debian/ wheezy-updates main contrib non-free" >> /etc/apt/sources.list && echo "deb http://security.debian.org/ wheezy/updates main contrib non-free" >> /etc/apt/sources.list)
 RUN apt-get update
 
-ENV NGINX_VER 1.7.0
+ENV NGINX_VER 1.7.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential libpcre3 libpcre3-dev libpcrecpp0 libssl-dev zlib1g-dev wget
 

@@ -27,4 +27,4 @@ then
 	echo -ne "done\n\n"
 fi
 
-/opt/mongodb/bin/mongod --rest --auth
+/opt/mongodb/bin/mongod --rest --httpinterface --auth

@@ -8,4 +8,4 @@ To pull this image:
 `docker pull mbentley/ubuntu-ums`
 
 Example usage:
-`docker run -i -t -p 5001:5001 -v /data/media:/path/to/your/media mbentley/ubuntu-ums`
+`docker run -i -t --net="host" -p 5001:5001 -v /data/media:/path/to/your/media --name ums mbentley/ubuntu-ums`

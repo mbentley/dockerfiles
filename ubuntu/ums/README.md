@@ -1,9 +1,11 @@
-mbentley/ubuntu-base
+mbentley/ubuntu-ums
 ==================
 
-Base docker image for Ubuntu 12.04
+docker image for Universal Media Server (UMS)
+based off of stackbrew/ubuntu:14.04
 
 To pull this image:
-`docker pull mbentley/ubuntu-base`
+`docker pull mbentley/ubuntu-ums`
 
-This should be used as a template for new images.
+Example usage:
+`docker run -i -t -p 5001:5001 -v /data/media:/path/to/your/media mbentley/ubuntu-ums`

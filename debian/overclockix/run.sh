@@ -53,6 +53,9 @@ case $action:$buildopts in
 	build:amd64_usb-hdd)
 		/opt/live/overclockix/amd64_usb-hdd/build.sh "${aptproxy}"
 		;;
+	release:*)
+		/opt/live/overclockix/scripts/cp_images_to_release ${buildopts}
+		;;
 	bash:*)
 		/bin/bash
 		;;

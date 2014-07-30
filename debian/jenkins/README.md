@@ -1,13 +1,13 @@
-mbentley/ubuntu-jenkins
+mbentley/debian-jenkins
 ==================
 
 docker image for jenkins; this image has been customized for compiling nginx.
 
 To pull this image:
-`docker pull mbentley/ubuntu-jenkins`
+`docker pull mbentley/debian-jenkins`
 
 Example usage:
-`docker run -p 8080 -i -t -d mbentley/ubuntu-jenkins`
+`docker run -p 8080 -i -t -d mbentley/debian-jenkins`
 
 
 Jenkins configuration:

@@ -2,7 +2,7 @@ mbentley/debian-ums
 ==================
 
 docker image for Universal Media Server (UMS)
-based off of stackbrew/debian:wheezy
+based off of stackbrew/debian:jessie
 
 To pull this image:
 `docker pull mbentley/debian-ums`

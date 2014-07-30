@@ -2,7 +2,7 @@ mbentley/debian-nginx
 ==================
 
 docker image for nginx
-based off of stackbrew/debian:wheezy
+based off of stackbrew/debian:jessie
 
 To pull this image:
 `docker pull mbentley/debian-nginx`

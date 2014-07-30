@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y curl wget openjdk-7-jre-he
 RUN wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
 RUN echo "deb http://pkg.jenkins-ci.org/debian binary/" > /etc/apt/sources.list.d/jenkins.list
 RUN apt-get update
-RUN RUNLEVEL=1 DEBIAN_FRONTEND=1 apt-get install -y jenkins
+RUN DEBIAN_FRONTEND=noninteractive RUNLEVEL=1 apt-get install -y jenkins
 RUN (wget --output-document=/usr/local/bin/docker https://get.docker.io/builds/Linux/x86_64/docker-latest && chmod +x /usr/local/bin/docker)
 RUN mkdir -p /var/lib/jenkins/plugins
 ADD plugins/ /var/lib/jenkins/plugins/

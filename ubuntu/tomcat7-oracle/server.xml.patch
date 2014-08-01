@@ -1,0 +1,10 @@
+--- server.xml	2014-07-24 14:07:17.273598731 +0000
++++ server.xml.new	2014-07-24 14:10:41.487032007 +0000
+@@ -68,6 +68,7 @@
+          Define a non-SSL HTTP/1.1 Connector on port 8080
+     -->
+     <Connector port="8080" protocol="HTTP/1.1"
++               bindOnInit="false"
+                connectionTimeout="20000"
+                redirectPort="8443" />
+     <!-- A "Connector" using the shared thread pool-->

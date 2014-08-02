@@ -56,6 +56,8 @@ case $action:$buildopts in
 	release:*)
 		/opt/live/overclockix/scripts/cp_images_to_release ${buildopts}
 		;;
+	createtorrents:*)
+		/opt/live/overclockix/scripts/create_torrent_files ${buildopts}
 	bash:*)
 		/bin/bash
 		;;

@@ -58,6 +58,7 @@ case $action:$buildopts in
 		;;
 	createtorrents:*)
 		/opt/live/overclockix/scripts/create_torrent_files ${buildopts}
+		;;
 	bash:*)
 		/bin/bash
 		;;

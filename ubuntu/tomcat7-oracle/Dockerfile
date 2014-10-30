@@ -3,7 +3,7 @@ MAINTAINER Matt Bentley <mbentley@mbentley.net>
 RUN (echo "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.canonical.com/ubuntu trusty partner" >> /etc/apt/sources.list)
 RUN apt-get update
 
-ENV TOMCATVER 7.0.55
+ENV TOMCATVER 7.0.56
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install patch wget
 RUN (wget --progress=dot --no-check-certificate -O /tmp/server-jre-7u65-linux-x64.tar.gz --header "Cookie: oraclelicense=a" http://download.oracle.com/otn-pub/java/jdk/7u65-b17/jdk-7u65-linux-x64.tar.gz && \

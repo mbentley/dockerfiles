@@ -3,7 +3,7 @@ MAINTAINER Matt Bentley <mbentley@mbentley.net>
 RUN (echo "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.canonical.com/ubuntu trusty partner" >> /etc/apt/sources.list)
 RUN apt-get update
 
-ENV TOMCATVER 7.0.55
+ENV TOMCATVER 7.0.56
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-7-jre-headless wget
 RUN (wget -O /tmp/tomcat7.tar.gz http://www.us.apache.org/dist/tomcat/tomcat-7/v${TOMCATVER}/bin/apache-tomcat-${TOMCATVER}.tar.gz && \

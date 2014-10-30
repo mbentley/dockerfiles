@@ -29,5 +29,4 @@ If you would like to start tomcat without any applications deployed and have a l
 mkdir -p /data/tomcat_webapps
 docker run -i -t -p 80:8080 -v /data/tomcat_webapps:/opt/tomcat/webapps mbentley/ubuntu-tomcat7
 cp helloworld.war /data/tomcat_webapps/ROOT.war
-curl $DOCKER_HOST
 ```

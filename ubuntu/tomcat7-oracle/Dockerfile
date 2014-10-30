@@ -15,7 +15,7 @@ RUN (wget --progress=dot --no-check-certificate -O /tmp/server-jre-7u65-linux-x6
 	chown root:root -R /usr/lib/jvm/java-7-oracle)
 RUN (update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-7-oracle/jre/bin/java 1 && update-alternatives --set java /usr/lib/jvm/java-7-oracle/jre/bin/java)
 
-RUN (wget -O /tmp/tomcat7.tar.gz http://mirror.cogentco.com/pub/apache/tomcat/tomcat-7/v${TOMCATVER}/bin/apache-tomcat-${TOMCATVER}.tar.gz && \
+RUN (wget -O /tmp/tomcat7.tar.gz http://www.us.apache.org/dist/tomcat/tomcat-7/v${TOMCATVER}/bin/apache-tomcat-${TOMCATVER}.tar.gz && \
         cd /opt && \
         tar zxf /tmp/tomcat7.tar.gz && \
         rm /tmp/tomcat7.tar.gz && \

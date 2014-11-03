@@ -1,6 +1,9 @@
 mbentley/ubuntu-django-uwsgi-nginx
 ==================
 
+## Important
+Note:  I am no longer maintaining this version as I have moved this Docker image to its own repo.  Please see https://github.com/mbentley/docker-django-uwsgi-nginx.  The new Docker image is named mbentley/django-uwsgi-nginx.
+
 docker image for django (uwsgi) & nginx
 based off of stackbrew/ubuntu:12.04
 

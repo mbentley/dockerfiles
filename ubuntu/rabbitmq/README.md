@@ -1,11 +1,4 @@
-mbentley/rabbitmq
+mbentley/ubuntu-rabbitmq
 ==================
 
-docker image for rabbitmq
-based off of stackbrew/ubuntu:12.04
-
-To pull this image:
-`docker pull mbentley/rabbitmq`
-
-Example usage:
-`docker -i -t -d run -p 5672 -p 15672 mbentley/rabbitmq`
+This Docker image has moved and is no longer available as mbentley/ubuntu-rabbitmq.  The new Docker image is mbentley/rabbitmq and can be found at https://github.com/mbentley/docker-rabbitmq

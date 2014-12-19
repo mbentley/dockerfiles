@@ -1,19 +1,4 @@
 mbentley/ubuntu-mongodb2.2.7
 ==================
 
-docker image for mongodb
-based off of stackbrew/ubuntu:12.04
-
-To pull this image:
-`docker pull mbentley/ubuntu-mongodb2.2.7`
-
-Example usage:
-`docker run -i -t -d -p 27017:27017 -p 28017:28017 -e MONGODB_USER=admin -e MONGODB_PASS=mongo -e MONGODB_DB=mongo mbentley/ubuntu-mongodb2.2.7`
-
-The following environment variables can be passed to the docker image:
-
-`MONGODB_USER` (default: admin)
-
-`MONGODB_PASS` (default: mongo)
-
-`MONGODB_DB` (default: mongo)
+This Docker image has moved and is no longer available as mbentley/ubuntu-mongodb2.2.7.  The new Docker image is mbentley/mongodb2.2 and can be found at https://github.com/mbentley/docker-mongodb2.2

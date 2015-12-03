@@ -2,7 +2,7 @@ mbentley/ubuntu-pgbouncer
 ==================
 
 docker image for pgbouncer
-based off of stackbrew/ubuntu:12.04
+based off of ubuntu:14.04
 
 To pull this image:
 `docker pull mbentley/ubuntu-pgbouncer`
@@ -20,4 +20,10 @@ This requires a link (named pg) to a postgres container or manually configured e
 
 `PG_ENV_POSTGRESQL_PASS` (default: <empty>)
 
+`PG_ENV_POSTGRESQL_MAX_CLIENT_CONN` (default: 10000)
+
+`PG_ENV_POSTGRESQL_DEFAULT_POOL_SIZE` (default: 400)
+
+`PG_ENV_POSTGRESQL_SERVER_IDLE_TIMEOUT` (default: 240)
+ 
 Note: I would suggest using the `mbentley/ubuntu-postgres9.3` image with this as it includes the above environment variables.

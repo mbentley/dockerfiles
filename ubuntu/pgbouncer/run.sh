@@ -41,6 +41,8 @@ then
         echo '"'"${PG_ENV_POSTGRESQL_USER}"'" "'"${PG_ENV_POSTGRESQL_PASS}"'"'  > /etc/pgbouncer/userlist.txt
 fi
 
+rm  /run/postgresql/pgbouncer.pid
+
 chown -R postgres:postgres /etc/pgbouncer
 chown root:postgres /var/log/postgresql
 chmod 1775 /var/log/postgresql

@@ -11,6 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install pgbouncer net-tools vim
 ENV PG_ENV_POSTGRESQL_MAX_CLIENT_CONN 10000
 ENV PG_ENV_POSTGRESQL_DEFAULT_POOL_SIZE 400
 ENV PG_ENV_POSTGRESQL_SERVER_IDLE_TIMEOUT 240
+ENV PG_ENV_POSTGRESQL_POOL_MODE session
 ADD run.sh /usr/local/bin/run
 
 RUN chmod +x /usr/local/bin/run

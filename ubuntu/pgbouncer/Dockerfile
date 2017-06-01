@@ -40,19 +40,15 @@ RUN apt-get update \
         libtool \
         pkg-config \
         wget \
-    && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-## After `make install` pgbouncer needs some extra touches to make it work
-RUN mkdir -p /etc/pgbouncer/
-RUN mkdir -p /var/run/postgresql/
-RUN mkdir -p /var/log/postgresql/
-RUN groupadd --system postgres
-RUN useradd -g postgres postgres
-RUN touch /var/log/postgresql
-RUN chown postgres:postgres /var/log/postgresql
-RUN chown postgres:postgres /var/run/postgresql/
-
-
+    && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /etc/pgbouncer/ \
+    && mkdir -p /var/run/postgresql/ \
+    && mkdir -p /var/log/postgresql/ \
+    && groupadd --system postgres \
+    && useradd -g postgres postgres \
+    && touch /var/log/postgresql \
+    && chown postgres:postgres /var/log/postgresql \
+    && chown postgres:postgres /var/run/postgresql
 
 ENV PG_ENV_POSTGRESQL_MAX_CLIENT_CONN 10000
 ENV PG_ENV_POSTGRESQL_DEFAULT_POOL_SIZE 400

@@ -1,13 +1,59 @@
 FROM ubuntu
 MAINTAINER Matt Bentley <mbentley@mbentley.net> and Gaurang Vyas <gdvyas@gmail.com>
-RUN (echo "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list && echo "deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list)
-RUN apt-get update
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install wget
-RUN wget --quiet --no-check-certificate -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install pgbouncer net-tools vim
+RUN apt-get update \
+    && apt-get -y --no-install-recommends install \
+        automake \
+        build-essential \
+        ca-certificates \
+        git \
+        libc-ares2 \
+        libc-ares-dev \
+        libev4 \
+        libev-dev \
+        libevent-2.0-5 \
+        libevent-dev \
+        libssl1.0.0 \
+        libssl-dev \
+        libtool \
+        pkg-config \
+        wget \
+    && mkdir -p /opt && cd /opt \
+    && git clone https://github.com/pgbouncer/pgbouncer.git \
+    && cd /opt/pgbouncer \
+    && git checkout pgbouncer_1_7_2 \
+    && git submodule init \
+    && git submodule update \
+    && ./autogen.sh \
+    && ./configure --enable-evdns=no \
+    && make \
+    && make install \
+    && apt-get remove -y \
+        automake \
+        build-essential \
+        ca-certificates \
+        git \
+        libc-ares-dev \
+        libev-dev \
+        libevent-dev \
+        libssl-dev \
+        libtool \
+        pkg-config \
+        wget \
+    && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+## After `make install` pgbouncer needs some extra touches to make it work
+RUN mkdir -p /etc/pgbouncer/
+RUN mkdir -p /var/run/postgresql/
+RUN mkdir -p /var/log/postgresql/
+RUN groupadd --system postgres
+RUN useradd -g postgres postgres
+RUN touch /var/log/postgresql
+RUN chown postgres:postgres /var/log/postgresql
+RUN chown postgres:postgres /var/run/postgresql/
+
+
+
 ENV PG_ENV_POSTGRESQL_MAX_CLIENT_CONN 10000
 ENV PG_ENV_POSTGRESQL_DEFAULT_POOL_SIZE 400
 ENV PG_ENV_POSTGRESQL_SERVER_IDLE_TIMEOUT 240

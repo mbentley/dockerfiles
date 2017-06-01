@@ -48,4 +48,4 @@ chown root:postgres /var/log/postgresql
 chmod 1775 /var/log/postgresql
 chmod 640 /etc/pgbouncer/userlist.txt
 
-/usr/sbin/pgbouncer -u postgres /etc/pgbouncer/pgbconf.ini
+pgbouncer -u postgres /etc/pgbouncer/pgbconf.ini
